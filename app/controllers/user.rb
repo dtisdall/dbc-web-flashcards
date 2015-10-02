@@ -13,6 +13,5 @@ end
 get '/user/:id/stats' do
   @rounds_total = User.find(params[:id]).rounds.count
   erb :'user/show'
-
 end
 

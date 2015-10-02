@@ -1,12 +1,31 @@
-<% if session[:prevous] == true %>
-<p>YAYAYAYAYAYYY</p>
-<% else %>
-<p> LEAARRNNNNN!!</p>
-<% end %>
 
-<%= @card.question %>
-<form method="post" action=<%= "/round/#{@round.id}/check_guess" %>>
-  <input type="hidden" name="card_id" value=<%= "#{@card.id}" %>>
-  <input type="text" name="guess">
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+
+
+
+
+<div class="jumbotron">
+
+  <% if session[:prevous] == true %>
+  <div class="alert alert-success" role="alert">
+          <strong>Correct!</strong> Do less better next time
+  </div>
+  <% elsif session[:prevous] == nil%>
+  <% elsif session[:prevous] == false%>
+  <div class="alert alert-danger" role="alert">
+          <strong>WRONG!</strong> Do better next time
+  </div>
+  <% end %>
+
+  <h1>Question</h1>
+  <p><%= @card.question %></p>
+
+
+  <form method="post" action=<%= "/round/#{@round.id}/check_guess" %>>
+    <input type="hidden" name="card_id" value=<%= "#{@card.id}" %>>
+    <input type="text" name="guess">
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+
+</div>
+

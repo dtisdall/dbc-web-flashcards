@@ -1,8 +1,19 @@
-<% @decks.each do | deck | %>
-<form method="post" action="/round">
-  <input type="hidden" name="new_round[user_id]" value="1">
-  <input type="hidden" name="new_round[deck_id]" value=<%= "#{deck.id}" %>>
-  <button type="submit" class="btn btn-default"><%= deck.name %></button>
-</form>
 
-<% end %>
+<div class="jumbotron">
+  <h1>Ruby Flashcards</h1>
+  <p>You better believe you are going to learn what v speeds are even if it kills you</p>
+</div>
+
+<div class="page-header">
+        <h1>Decks</h1>
+      </div>
+      <p>
+        <% @decks.each do | deck | %>
+        <form method="post" action="/round">
+          <input type="hidden" name="new_round[user_id]" value="1">
+          <input type="hidden" name="new_round[deck_id]" value=<%= "#{deck.id}" %>>
+          <button type="submit" class="btn btn-lg btn-primary"><%= deck.name %></button>
+        </form>
+
+        <% end %>
+      </p>
