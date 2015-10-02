@@ -11,3 +11,8 @@ round = Round.create(user: user, deck: deck)
 Guess.create(card: Card.find(1), round: round, correct: false)
 Guess.create(card: Card.find(2), round: round, correct: false)
 Guess.create(card: Card.find(3), round: round, correct: false)
+
+# u = User.all.first
+# d = Deck.all.first
+# r = Round.new(user: u, deck: d)
+# params = {card_id: 3, guess: "33"}
