@@ -1,0 +1,8 @@
+<% @decks.each do | deck | %>
+<form method="post" action="/round">
+  <input type="hidden" name="new_round[user_id]" value="1">
+  <input type="hidden" name="new_round[deck_id]" value=<%= "#{deck.id}" %>>
+  <button type="submit" class="btn btn-default"><%= deck.name %></button>
+</form>
+
+<% end %>
