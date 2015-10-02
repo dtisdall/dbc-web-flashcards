@@ -24,7 +24,7 @@ end
 get '/round/:id/next_card' do |id|
   @round = Round.find(id)
   @card = @round.next_card
-  redirect "/round/#{round.id}/stats" if @card.nil?
+  redirect "/round/#{@round.id}/stats" if @card.nil?
   erb :'round/show_card'
 end
 
@@ -39,4 +39,5 @@ end
 
 get '/round/:id/stats' do
 	#Ignore authentication, everyone can see the stats for all rounds
+  @round = Round.find(id)
 end

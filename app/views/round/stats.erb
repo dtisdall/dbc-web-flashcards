@@ -1,0 +1,5 @@
+<h1>Your stats!</h1>
+<h2>You had <%= @round.total_guesses %> attempts</h2>
+<h2>Your percentage right was <%= @round.correct_guesses / @round.total_guesses.to_f * 100 %>% </h2>
+<h2>Correct guesses: <%= @round.correct_guesses %> </h2>
+<h2>Incorrect guesses: <%= @round.incorrect_guesses %> </h2>

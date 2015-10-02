@@ -18,4 +18,16 @@ class Round < ActiveRecord::Base
     cards_without_correct_answers.sample
   end
 
+  def correct_guesses
+    correct_guesses = self.guesses.where(correct: false).count
+  end
+
+  def incorrect_guesses
+    incorrect_guesses = self.guesses.where(correct: true).count
+  end
+
+  def total_guesses
+    total_guesses = correct_guesses + incorrect_guesses
+  end
+
 end
