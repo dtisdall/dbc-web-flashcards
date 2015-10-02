@@ -27,5 +27,5 @@ end
 
 get '/round/:id/stats' do |id|
   @round = Round.find(id)
-   erb :'round/stats'
+  erb :'round/stats'
 end
