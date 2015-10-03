@@ -16,6 +16,7 @@ class Round < ActiveRecord::Base
     all_cards = self.deck.cards
     cards_without_correct_answers = all_cards - correctly_guessed_cards
     cards_without_correct_answers.sample
+
   end
 
   def incorrect_guesses
