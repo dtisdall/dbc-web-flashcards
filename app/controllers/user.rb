@@ -10,6 +10,8 @@ get '/logout' do
 	#TODOL Allow logout
 end
 
-get '/user/id:/stats' do
-	#Ignore authentication, everyone can see the stats for all users
+get '/user/:id/stats' do
+  @rounds_total = User.find(params[:id]).rounds.count
+  erb :'user/show'
 end
+
